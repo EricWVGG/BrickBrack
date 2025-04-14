@@ -4,31 +4,8 @@
 //
 //  Created by Eric Jacobsen on 4/1/25.
 //
-/*
- # A masonry view based on SwiftUI Layout.
 
- Unlike every other masonry view (to the best of my knowledge), this allows for a mix of vertical and horizontal spanning bricks.
- 
- ## Usage…
- ```
- BrickBrack(gapX: 24, gapY: 24, columnCount: 4) {
-    Rectangle()
-        .foregroundColor(.blue)
-        .frame(maxWidth: .infinity, maxHeight: .infinity) // drop if you just want placement and not filling the cell
-        .gridCell(Brick(origin: BrickOrigin(x: 0, y: 0), size: BrickSize(columns: 1, rows: 1))
- }
- ```
-
- ## Necessary enhancements…
- 1. Add caching, this is obviously pretty complicated.
-
- ## Future improvements…
- 1. The foundation of the grid is square. Should be able to accept rectangles.
- 2. This starts with the grid width for determining cell size. Could using the height be an option?
- 3. The user tells the Masonry wall how many columns to use. There could be an option to fill in brick size, and let it auto-column instead.
-    a. That’s another reason why the axis should be variable (see #2).
- 4. Could this place L's and "tetronimos" and other oddly-shaped bricks?
- */
+// see README.md for usage
 
 import SwiftUI
 
