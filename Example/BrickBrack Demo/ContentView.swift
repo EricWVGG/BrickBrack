@@ -11,21 +11,21 @@ import BrickBrack
 struct ContentView: View {
     var body: some View {
         BrickBrack(gap:5, columns: 5) {
-            Text("I’m 1x2 at 0,0")
+            Text("1x2 at 0,0")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(.blue)
                 .gridCell(
                     Brick(origin: BrickOrigin( x: 0, y: 0 ), size: BrickSize(columns: 1, rows: 2))
                 )
             
-            Text("I’m 2x1 at 1,0")
+            Text("2x1 at 1,0")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(.yellow)
                 .gridCell(
                     Brick(origin: BrickOrigin( x: 1, y: 0 ), size: BrickSize(columns: 2, rows: 1))
                 )
 
-            Text("I’m 3x2, automatically placed")
+            Text("3x2, automatically placed")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(.green)
                 .gridCell(
@@ -48,6 +48,12 @@ struct ContentView: View {
                     Brick(size: BrickSize(columns: 1, rows: 1))
                 )
 
+            Text("1x2 auto")
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(.pink)
+                .gridCell(
+                    Brick(size: BrickSize(columns: 1, rows: 2))
+                )
 
         }
     }

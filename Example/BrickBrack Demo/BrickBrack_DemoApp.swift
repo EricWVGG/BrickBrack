@@ -11,7 +11,7 @@ import SwiftUI
 struct BrickBrack_DemoApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CalculatorView()
         }
     }
 }

@@ -94,7 +94,7 @@ extension BrickBrack {
             // For each possible origin, see if brick's template is occupied.
             
             // If max occupied cell is 42, check everything up to that, and add an empty row in case everything is occupied to that point.
-            let cellsToCheck = (self.cells.max() ?? 0) + self.columnCount * 2
+            let cellsToCheck = (self.cells.max() ?? 0) + self.columnCount
             
             print(self.cells)
             
@@ -106,9 +106,8 @@ extension BrickBrack {
                 let possibleOrigin = current.0
                 let templateAtThisOrigin = self.brickTemplate(for: brick, atOffset: possibleOrigin)
                 let valid = templateAtThisOrigin.reduce(true) { valid, cell in
-                    return !self.cells.contains(cell) && valid
+                    valid && !self.cells.contains(cell)
                 }
-                print(possibleOrigin, templateAtThisOrigin, valid)
                 return valid ? possibleOrigin : nil
             }
             

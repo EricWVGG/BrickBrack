@@ -41,6 +41,8 @@ BrickWall(gapX: 24, gapY: 24, columnCount: 5) {
 
 Needs Layout cache.
 
+Known error: does not properly return sizeThatFits for auto-placemed bricks.
+
 More demos and examples, and some animated images in this README doc.
 
 ## Future enhancements
