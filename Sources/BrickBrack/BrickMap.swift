@@ -31,6 +31,8 @@
     1x3 brick, origin 2: [0,4,8].forEach { return !map.contains(0+offset) && !map.contains(4+offset) && !map.contains(8+offset) } // succeeds; [2,6,10] are available.
  */
 
+import Foundation
+
 extension BrickBrack {
     class BrickBrackMap {
         public var cells: [Int] = []
@@ -40,19 +42,6 @@ extension BrickBrack {
             self.columnCount = columnCount
             if let subviews = subviews {
                 self.fillCellsFromSubviews(subviews)
-            }
-        }
-        
-        func fillCellsFromSubviews(_ subviews: Subviews) {
-            subviews.forEach { subview in
-                let brick = subview[BrickKey.self]
-                if let origin = brick.origin {
-                    let originCell = origin.y * self.columnCount + origin.x
-                    let brickTemplate = brickTemplate(for: brick, atOffset: originCell)
-                    brickTemplate.forEach { cell in
-                        self.cells.append(cell)
-                    }
-                }
             }
         }
         
@@ -75,6 +64,19 @@ extension BrickBrack {
             }
             return occupiedCells
         }
+
+        func fillCellsFromSubviews(_ subviews: Subviews) {
+            subviews.forEach { subview in
+                let brick = subview[BrickKey.self]
+                if let origin = brick.origin {
+                    let originCell = origin.y * self.columnCount + origin.x
+                    let brickTemplate = brickTemplate(for: brick, atOffset: originCell)
+                    brickTemplate.forEach { cell in
+                        self.cells.append(cell)
+                    }
+                }
+            }
+        }
         
         func coordinatesForCell(_ cell: Int) -> (Int, Int) {
             /* Returns x/y coordinates of any cell.
@@ -92,7 +94,9 @@ extension BrickBrack {
             // For each possible origin, see if brick's template is occupied.
             
             // If max occupied cell is 42, check everything up to that, and add an empty row in case everything is occupied to that point.
-            let cellsToCheck = (self.cells.max() ?? 0) + self.columnCount
+            let cellsToCheck = (self.cells.max() ?? 0) + self.columnCount * 2
+            
+            print(self.cells)
             
             let originCell: Int? = (0..<cellsToCheck).enumerated().reduce(nil) { (currentResult, current) in
                 if currentResult != nil {
@@ -102,8 +106,9 @@ extension BrickBrack {
                 let possibleOrigin = current.0
                 let templateAtThisOrigin = self.brickTemplate(for: brick, atOffset: possibleOrigin)
                 let valid = templateAtThisOrigin.reduce(true) { valid, cell in
-                    return !valid || !self.cells.contains(cell)
+                    return !self.cells.contains(cell) && valid
                 }
+                print(possibleOrigin, templateAtThisOrigin, valid)
                 return valid ? possibleOrigin : nil
             }
             

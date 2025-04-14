@@ -11,44 +11,29 @@ import SwiftUI
 
 let ERROR_DOMAIN = "BrickBrackLayout"
 
-struct BrickOrigin {
-    let x: Int
-    let y: Int
+struct BrickKey: @preconcurrency LayoutValueKey {
+    @MainActor static var defaultValue: Brick = Brick(origin: BrickOrigin(x: 0, y: 0), size: BrickSize(columns: 1, rows: 1))
 }
 
-struct BrickSize {
-    let columns: Int
-    let rows: Int
-}
-
-struct Brick {
-    let origin: BrickOrigin?
-    let size: BrickSize
-}
-
-struct BrickKey: LayoutValueKey {
-    static var defaultValue: Brick = Brick(origin: BrickOrigin(x: 0, y: 0), size: BrickSize(columns: 1, rows: 1))
-}
-
-struct BrickBrack: Layout {
+public struct BrickBrack: Layout {
     private let gapX: CGFloat
     private let gapY: CGFloat
-    private let columnCount: Int
+    private let columns: Int
     
-    public init(gapX: CGFloat, gapY: CGFloat, columnCount: Int) {
+    public init(gapX: CGFloat, gapY: CGFloat, columns: Int) {
         self.gapX = gapX
         self.gapY = gapY
-        self.columnCount = columnCount
+        self.columns = columns
     }
     
-    public init(gap: CGFloat, columnCount: Int) {
+    public init(gap: CGFloat, columns: Int) {
         self.gapX = gap
         self.gapY = gap
-        self.columnCount = columnCount
+        self.columns = columns
     }
     
     // # Required by Layout protocol
-    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
+    public func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
         // Returns the size of the content in the Grid.
 
         let cellSize = self.cellSize(forGridSize:proposal.width ?? 1000)
@@ -72,11 +57,11 @@ struct BrickBrack: Layout {
     }
     
     // # Required by Layout protocol
-    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
+    public func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
         // Places views inside the grid.
         var destinations: [CGRect] = []
         
-        let BrickBrackMap = BrickBrackMap(columnCount: self.columnCount, subviews: subviews)
+        let BrickBrackMap = BrickBrackMap(columnCount: self.columns, subviews: subviews)
         
         subviews.forEach { subview in
             let brick = subview[BrickKey.self]
@@ -112,14 +97,14 @@ struct BrickBrack: Layout {
 
 extension View {
     // This adds a .gridCell() modifier to SwiftUI views, so we can feed desired brick dimensions to the layout.
-    func gridCell(_ brick: Brick) -> some View {
+    public func gridCell(_ brick: Brick) -> some View {
         layoutValue(key: BrickKey.self, value: brick)
     }
 }
 
 extension BrickBrack {
     private func cellSize(forGridSize gridSize: CGFloat) -> CGFloat {
-        let cols = CGFloat(self.columnCount)
+        let cols = CGFloat(self.columns)
         return ( gridSize - self.gapX * (cols + 1) ) / cols
     }
 }

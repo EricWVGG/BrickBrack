@@ -47,8 +47,8 @@ More demos and examples, and some animated images in this README doc.
 
 This layout takes a predetermined number of columns, then grows vertically to accomodate the content. It should be enhanced to take a number of rows instead, and grow horizontally (basically, the axis should pivot).
 
-I’d like to dream up some way to automatically generate cell sizes (ex. automatically decide that something would fit 5x1 well, or whatever).
+I’d like to dream up some way to automatically generate cell sizes (i.e. determine that a very wide image would fit 5x1, or whatever).
 
-The foundation of the grid is square. Perhaps it should take rectangular or irregular bricks?.
+The foundation of the grid is square. Perhaps it should take rectangular or irregular cells?.
 
 Could this place L's and "tetronimos" and other oddly-shaped bricks?
