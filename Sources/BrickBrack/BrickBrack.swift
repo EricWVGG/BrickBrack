@@ -32,60 +32,41 @@ public struct BrickBrack: Layout {
         self.columns = columns
     }
     
-    // # Required by Layout protocol
-    public func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
-        // Returns the size of the content in the Grid.
-
-        let cellSize = self.cellSize(forGridSize:proposal.width ?? 1000)
-        
-        // Cycle through every brick for the lowest y and add that brick's height
-        let y = subviews.reduce(0) {
-            let brick = $1[BrickKey.self]
-            let fromTop = CGFloat(integerLiteral: brick.origin?.y ?? 0)
-            let yGapOffset = (fromTop + 1) * self.gapY
-            
-            let rows = CGFloat(integerLiteral: brick.size.rows)
-            let yGapPad: CGFloat = (rows - 1) * self.gapY
-            
-            let heightOfBrick = rows * cellSize + yGapPad
-            let yOffset = fromTop * cellSize + yGapOffset
-            
-            return max($0, yOffset + heightOfBrick)
-        }
-        
-        return CGSize(width: proposal.width ?? .infinity, height: y)
+    public struct Cache {
+        var destinations: [CGRect] = []
+        var bounds: CGRect = .zero
+    }
+    
+    public func makeCache(subviews: Subviews) -> Cache {
+        return Cache()
+    }
+    
+    public func updateCache(_ cache: inout Cache, subviews: Subviews) {
+        cache.destinations = self.mapSubviewsToDestinations(
+            subviews,
+            cellSize: self.cellSize(forGridSize: cache.bounds.size.width), offset: CGPoint(
+                x: max(cache.bounds.minX ?? 0, 0),
+                y: max(cache.bounds.minY ?? 0, 0)
+            )
+        )
+    }
+    
+     // # Required by Layout protocol
+    public func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout Cache) -> CGSize {
+        let y = self.mapSubviewsToDestinations(subviews, cellSize: self.cellSize(forGridSize: proposal.width ?? .infinity))
+            .reduce(0) { maxY, destination in
+                return max(maxY, destination.minY + destination.height)
+            }
+        return CGSize(width: proposal.width ?? .infinity, height: y ?? proposal.height ?? .infinity)
     }
     
     // # Required by Layout protocol
-    public func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
-        // Places views inside the grid.
-        var destinations: [CGRect] = []
-        
-        let BrickBrackMap = BrickBrackMap(columnCount: self.columns, subviews: subviews)
-        
-        subviews.forEach { subview in
-            let brick = subview[BrickKey.self]
-            
-            var originX: Int?
-            var originY: Int?
-            
-            if let brickOrigin = subview[BrickKey.self].origin {
-                originX = brickOrigin.x
-                originY = brickOrigin.y
-            } else {
-                (originX, originY) = BrickBrackMap.originForUnmappedBrick(brick)
-            }
-            
-            guard let originX = originX, let originY = originY else {
-                #if DEBUG
-                fatalError("Error finding origin for brick (this should be impossible).")
-                #endif
-            }
-            let destination = self.brickDestination(x: originX, y: originY, columns: brick.size.columns, rows: brick.size.rows, withinBounds: bounds)
-            destinations.append(destination)
+    public func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout Cache) {
+        if cache.bounds != bounds || subviews.count != cache.destinations.count {
+            cache.bounds = bounds
+            self.updateCache(&cache, subviews: subviews)
         }
-        
-        zip(subviews, destinations).forEach { (subview, frame) in
+        zip(subviews, cache.destinations).forEach { (subview, frame) in
             return subview.place(
                 at: frame.origin,
                 anchor: .topLeading,
@@ -110,14 +91,51 @@ extension BrickBrack {
 }
 
 extension BrickBrack {
-    func brickDestination(x originX: Int, y originY: Int, columns: Int, rows: Int, withinBounds bounds: CGRect) -> CGRect {
-        // Provides a CGRect for a given origin, and column/row set, and accounts for the grid gap.
+    private func mapSubviewsToDestinations(
+        _ subviews: Subviews,
+        cellSize: CGFloat,
+        offset: CGPoint = CGPoint(x: 0, y: 0)
+    ) -> [CGRect] {
+        let map = BrickBrackMap(columnCount: self.columns, subviews: subviews)
 
-        // a Swift Layout might not start at 0,0; this is the actual origin of the layout.
-        let minX = max(bounds.minX, 0)
-        let minY = max(bounds.minY, 0)
-        
-        let cellSize = self.cellSize(forGridSize: bounds.size.width)
+        return subviews.map { subview in
+            let brick = subview[BrickKey.self]
+            
+            var originX: Int?
+            var originY: Int?
+            
+            if let brickOrigin = subview[BrickKey.self].origin {
+                originX = brickOrigin.x
+                originY = brickOrigin.y
+            } else {
+                (originX, originY) = map.findOriginForUnmappedBrick(brick)
+            }
+            
+            guard let originX = originX, let originY = originY else {
+                #if DEBUG
+                fatalError("Error finding origin for brick (this should be impossible).")
+                #endif
+            }
+            return self.brickDestination(
+                x: originX,
+                y: originY,
+                columns: brick.size.columns,
+                rows: brick.size.rows,
+                cellSize: cellSize,
+                offset: offset
+            )
+        }
+    }
+    
+    private func brickDestination(
+        x originX: Int,
+        y originY: Int,
+        columns: Int,
+        rows: Int,
+        cellSize: CGFloat,
+        offset: CGPoint
+    ) -> CGRect {
+        // Provides a CGRect for a given origin, and column/row set, and accounts for the grid gap and layout offset.
 
         // convert values to floats
         let fOriginX: CGFloat = CGFloat(originX)
@@ -135,8 +153,8 @@ extension BrickBrack {
         let yGapPad = (fRows - 1) * self.gapY
         
         return CGRect(
-            x: minX + fOriginX * cellSize + xGapOffset,
-            y: minY + fOriginY * cellSize + yGapOffset,
+            x: offset.x + fOriginX * cellSize + xGapOffset,
+            y: offset.y + fOriginY * cellSize + yGapOffset,
             width: fColumns * cellSize + xGapPad,
             height: fRows * cellSize + yGapPad
         )

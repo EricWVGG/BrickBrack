@@ -41,7 +41,7 @@ extension BrickBrack {
         init(columnCount: Int, subviews: Subviews? = nil) {
             self.columnCount = columnCount
             if let subviews = subviews {
-                self.fillCellsFromSubviews(subviews)
+                self.prefillCellsFromSubviews(subviews)
             }
         }
         
@@ -65,7 +65,7 @@ extension BrickBrack {
             return occupiedCells
         }
 
-        func fillCellsFromSubviews(_ subviews: Subviews) {
+        func prefillCellsFromSubviews(_ subviews: Subviews) {
             subviews.forEach { subview in
                 let brick = subview[BrickKey.self]
                 if let origin = brick.origin {
@@ -90,13 +90,11 @@ extension BrickBrack {
             return (originX, originY)
         }
         
-        func originForUnmappedBrick(_ brick: Brick) -> (Int, Int) {
+        func findOriginForUnmappedBrick(_ brick: Brick) -> (Int, Int) {
             // For each possible origin, see if brick's template is occupied.
             
             // If max occupied cell is 42, check everything up to that, and add an empty row in case everything is occupied to that point.
             let cellsToCheck = (self.cells.max() ?? 0) + self.columnCount
-            
-            print(self.cells)
             
             let originCell: Int? = (0..<cellsToCheck).enumerated().reduce(nil) { (currentResult, current) in
                 if currentResult != nil {

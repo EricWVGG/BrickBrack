@@ -138,11 +138,6 @@ struct CalculatorView: View {
                 .gridCell(
                     Brick(size: BrickSize(columns: 1, rows: 1))
                 )
-            
-
-
-
-
         }
     }
 }
