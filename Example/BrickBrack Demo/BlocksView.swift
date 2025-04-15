@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  BlocksView.swift
 //  BrickBrack Demo
 //
 //  Created by Eric Jacobsen on 4/14/25.
@@ -8,9 +8,11 @@
 import SwiftUI
 import BrickBrack
 
-struct ContentView: View {
+struct BlocksView: View {
+    @State private var orientation = UIDeviceOrientation.unknown
+
     var body: some View {
-        BrickBrack(gap:5, columns: 5) {
+        BrickBrack(gap:5, columns: orientation.isLandscape ? 9 : 5) {
             Text("1x2 at 0,0")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(.blue)
@@ -56,9 +58,12 @@ struct ContentView: View {
                 )
 
         }
+        .onRotate { newOrientation in
+            orientation = newOrientation
+        }
     }
 }
 
 #Preview {
-    ContentView()
+    BlocksView()
 }

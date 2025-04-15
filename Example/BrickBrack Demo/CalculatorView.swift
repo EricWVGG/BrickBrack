@@ -9,8 +9,10 @@ import SwiftUI
 import BrickBrack
 
 struct CalculatorView: View {
+    @State private var orientation = UIDeviceOrientation.unknown
+    
     var body: some View {
-        BrickBrack(gap:5, columns: 4) {
+        return BrickBrack(gap:5, columns: orientation.isLandscape ? 6 : 4) {
             Text("MC")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(.blue)
@@ -67,7 +69,7 @@ struct CalculatorView: View {
                     Brick(size: BrickSize(columns: 1, rows: 1))
                 )
             
-
+            
             Text("6")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(.blue)
@@ -138,6 +140,9 @@ struct CalculatorView: View {
                 .gridCell(
                     Brick(size: BrickSize(columns: 1, rows: 1))
                 )
+        }
+        .onRotate { newOrientation in
+            orientation = newOrientation
         }
     }
 }
