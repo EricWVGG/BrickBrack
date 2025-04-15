@@ -35,6 +35,7 @@ public struct BrickBrack: Layout {
     public struct Cache {
         var destinations: [CGRect] = []
         var bounds: CGRect = .zero
+        var viewWidth: CGFloat = 0
     }
     
     public func makeCache(subviews: Subviews) -> Cache {
@@ -44,7 +45,7 @@ public struct BrickBrack: Layout {
     public func updateCache(_ cache: inout Cache, subviews: Subviews) {
         cache.destinations = self.mapSubviewsToDestinations(
             subviews,
-            cellSize: self.cellSize(forGridSize: cache.bounds.size.width), offset: CGPoint(
+            cellSize: self.cellSize(forViewSize: cache.viewWidth), offset: CGPoint(
                 x: max(cache.bounds.minX ?? 0, 0),
                 y: max(cache.bounds.minY ?? 0, 0)
             )
@@ -53,7 +54,8 @@ public struct BrickBrack: Layout {
     
      // # Required by Layout protocol
     public func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout Cache) -> CGSize {
-        let y = self.mapSubviewsToDestinations(subviews, cellSize: self.cellSize(forGridSize: proposal.width ?? .infinity))
+        cache.viewWidth = proposal.width ?? .infinity
+        let y = self.mapSubviewsToDestinations(subviews, cellSize: self.cellSize(forViewSize: proposal.width ?? .infinity))
             .reduce(0) { maxY, destination in
                 return max(maxY, destination.minY + destination.height)
             }
@@ -84,9 +86,9 @@ extension View {
 }
 
 extension BrickBrack {
-    private func cellSize(forGridSize gridSize: CGFloat) -> CGFloat {
+    private func cellSize(forViewSize viewSize: CGFloat) -> CGFloat {
         let cols = CGFloat(self.columns)
-        return ( gridSize - self.gapX * (cols + 1) ) / cols
+        return ( viewSize - self.gapX * (cols + 1) ) / cols
     }
 }
 
