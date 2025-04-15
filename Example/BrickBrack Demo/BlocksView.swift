@@ -57,6 +57,42 @@ struct BlocksView: View {
                     Brick(size: BrickSize(columns: 1, rows: 2))
                 )
 
+            Text("1x1 auto")
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(.pink)
+                .gridCell(
+                    Brick(size: BrickSize(columns: 1, rows: 1))
+                )
+
+            Text("1x1 auto")
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(.indigo)
+                .gridCell(
+                    Brick(size: BrickSize(columns: 1, rows: 1))
+                )
+
+            Text("1x1 auto")
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(.mint)
+                .gridCell(
+                    Brick(size: BrickSize(columns: 1, rows: 1))
+                )
+
+            Text("5x2 auto")
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(.cyan)
+                .gridCell(
+                    Brick(size: BrickSize(columns: 5, rows: 1))
+                )
+
+            Text("1x1 auto")
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(.yellow)
+                .gridCell(
+                    Brick(size: BrickSize(columns: 1, rows: 1))
+                )
+
+
         }
         .onRotate { newOrientation in
             orientation = newOrientation

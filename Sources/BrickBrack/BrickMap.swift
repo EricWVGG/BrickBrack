@@ -94,7 +94,7 @@ extension BrickBrack {
             // For each possible origin, see if brick's template is occupied.
             
             // If max occupied cell is 42, check everything up to that, and add an empty row in case everything is occupied to that point.
-            let cellsToCheck = (self.cells.max() ?? 0) + self.columnCount
+            let cellsToCheck = (self.cells.max() ?? 0) + self.columnCount * 2
             
             let originCell: Int? = (0..<cellsToCheck).enumerated().reduce(nil) { (currentResult, current) in
                 if currentResult != nil {
@@ -103,12 +103,14 @@ extension BrickBrack {
                 }
                 let possibleOrigin = current.0
                 let templateAtThisOrigin = self.brickTemplate(for: brick, atOffset: possibleOrigin)
-                let valid = templateAtThisOrigin.reduce(true) { valid, cell in
+                let cellsAreEmpty = templateAtThisOrigin.reduce(true) { valid, cell in
                     valid && !self.cells.contains(cell)
                 }
-                return valid ? possibleOrigin : nil
+                let x = self.columnCount - (possibleOrigin % self.columnCount) + 1
+                let fitsInRow = brick.size.columns <= x
+                return cellsAreEmpty && fitsInRow ? possibleOrigin : nil
             }
-            
+
             guard let originCell = originCell else {
                 #if DEBUG
                 fatalError("Could not find origin for brick. (This should be impossible, there is no upper limit on map.)")
