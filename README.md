@@ -1,6 +1,6 @@
-# BrickBrack
+# BrickWall
 
-BrickBrack is a SwiftUI Layout library. It creates a “masonry” layout that supports bricks in mixed horizontal and vertical orientations.
+BrickWall is a SwiftUI Layout library. It creates a “masonry” layout that supports bricks in mixed horizontal and vertical orientations.
 
 ## Release notes
 
@@ -10,38 +10,35 @@ This was put together for a project I’m working on, so documentation and examp
 
 ```
 BrickWall(gapX: 24, gapY: 24, columnCount: 5) {
+    Text("This is a 1x1 brick that will automatically insert into the first empty 1x1 space.")
+        .gridCell(
+            Brick(columns: 1, rows: 1)
+        )
+
+    Text("This is a 2x1 brick that will automatically insert into the first empty 2x1 space.")
+        .gridCell(
+            Brick(columns: 2, rows: 1)
+        )    
+
     Text("This is a 2x1 brick, placed at origin 0,0.")
         .gridCell(
-            Brick(origin: { x: 0, y: 0 }, size: BrickSize(columns: 2, rows: 1))
+            Brick(columns: 2, rows: 1, x: 0, y: 0)
         )
     
     Text("This is a 1x2 brick, placed at origin 2,0.")
         .gridCell(
-            Brick(origin: { x: 2, y: 0 }, size: BrickSize(columns: 1, rows: 2))
+            Brick(columns: 1, rows: 2, x: 2, y: 0)
         )
     
     Text("This is a 3x1 brick, placed at origin 3,1.")
         .gridCell(
-            Brick(origin: { x: 3, y: 1 }, size: BrickSize(columns: 3, rows: 1))
+            Brick(columns: 3, rows: 1, x: 3, y: 1)
         )
     
-    Text("This is a 2x1 brick that will automatically insert into the first empty 2x1 space.")
-        .gridCell(
-            Brick(size: BrickSize(columns: 2, rows: 1))
-        )
-    
-    Text("This is a 1x1 brick that will automatically insert into the first empty 1x1 space.")
-        .gridCell(
-            Brick(size: BrickSize(columns: 1, rows: 1))
-        )
 }
 ```
 
 ## Near-future enhancements
-
-Needs Layout cache.
-
-Known error: does not properly return sizeThatFits for auto-placemed bricks.
 
 More demos and examples, and some animated images in this README doc.
 

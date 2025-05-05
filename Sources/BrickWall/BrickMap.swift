@@ -1,6 +1,6 @@
 //
 //  Map.swift
-//  BrickBrack
+//  BrickWall
 //
 //  Created by Eric Jacobsen on 4/1/25.
 //
@@ -33,8 +33,8 @@
 
 import Foundation
 
-extension BrickBrack {
-    class BrickBrackMap {
+extension BrickWall {
+    class BrickWallMap {
         public var cells: [Int] = []
         public let columnCount: Int
         

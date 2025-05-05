@@ -1,73 +1,73 @@
 //
 //  CalculatorView.swift
-//  BrickBrack Demo
+//  BrickWall Demo
 //
 //  Created by Eric Jacobsen on 4/14/25.
 //
 
 import SwiftUI
-import BrickBrack
+import BrickWall
 
 // todo: this is kinda messed up and needs debugging
 
 func BrickMap(_ identifier: String, _ orientation: UIDeviceOrientation) -> Brick {
     switch identifier {
         case "0": !orientation.isLandscape
-            ? Brick(origin: BrickOrigin(x: 0, y: 4), size: BrickSize(columns: 2, rows: 1))
-            : Brick(origin: BrickOrigin(x: 0, y: 3), size: BrickSize(columns: 2, rows: 1))
+            ? Brick(columns: 2, rows: 1, x: 0, y: 4)
+            : Brick(columns: 2, rows: 1, x: 0, y: 3)
         case "1": !orientation.isLandscape
-            ? Brick(origin: BrickOrigin(x: 0, y: 3), size: BrickSize(columns: 1, rows: 1))
-            : Brick(origin: BrickOrigin(x: 0, y: 0), size: BrickSize(columns: 1, rows: 1))
+            ? Brick(columns: 1, rows: 1, x: 0, y: 3)
+            : Brick(columns: 1, rows: 1, x: 0, y: 0)
         case "2": !orientation.isLandscape
-            ? Brick(origin: BrickOrigin(x: 1, y: 3), size: BrickSize(columns: 1, rows: 1))
-            : Brick(origin: BrickOrigin(x: 0, y: 1), size: BrickSize(columns: 1, rows: 1))
+            ? Brick(columns: 1, rows: 1, x: 1, y: 3)
+            : Brick(columns: 1, rows: 1, x: 0, y: 1)
         case "3": !orientation.isLandscape
-            ? Brick(origin: BrickOrigin(x: 2, y: 3), size: BrickSize(columns: 1, rows: 1))
-            : Brick(origin: BrickOrigin(x: 0, y: 2), size: BrickSize(columns: 1, rows: 1))
+            ? Brick(columns: 1, rows: 1, x: 2, y: 3)
+            : Brick(columns: 1, rows: 1, x: 0, y: 2)
         case "4": !orientation.isLandscape
-            ? Brick(origin: BrickOrigin(x: 0, y: 2), size: BrickSize(columns: 1, rows: 1))
-            : Brick(origin: BrickOrigin(x: 1, y: 0), size: BrickSize(columns: 1, rows: 1))
+            ? Brick(columns: 1, rows: 1, x: 0, y: 2)
+            : Brick(columns: 1, rows: 1, x: 1, y: 0)
         case "5": !orientation.isLandscape
-            ? Brick(origin: BrickOrigin(x: 1, y: 2), size: BrickSize(columns: 1, rows: 1))
-            : Brick(origin: BrickOrigin(x: 1, y: 1), size: BrickSize(columns: 1, rows: 1))
+            ? Brick(columns: 1, rows: 1, x: 1, y: 2)
+            : Brick(columns: 1, rows: 1, x: 1, y: 1)
         case "6": !orientation.isLandscape
-            ? Brick(origin: BrickOrigin(x: 2, y: 2), size: BrickSize(columns: 1, rows: 1))
-            : Brick(origin: BrickOrigin(x: 1, y: 2), size: BrickSize(columns: 1, rows: 1))
+            ? Brick(columns: 1, rows: 1, x: 2, y: 2)
+            : Brick(columns: 1, rows: 1, x: 1, y: 2)
         case "7": !orientation.isLandscape
-            ? Brick(origin: BrickOrigin(x: 0, y: 1), size: BrickSize(columns: 1, rows: 1))
-            : Brick(origin: BrickOrigin(x: 2, y: 0), size: BrickSize(columns: 1, rows: 1))
+            ? Brick(columns: 1, rows: 1, x: 0, y: 1)
+            : Brick(columns: 1, rows: 1, x: 2, y: 0)
         case "8": !orientation.isLandscape
-            ? Brick(origin: BrickOrigin(x: 1, y: 1), size: BrickSize(columns: 1, rows: 1))
-            : Brick(origin: BrickOrigin(x: 2, y: 1), size: BrickSize(columns: 1, rows: 1))
+            ? Brick(columns: 1, rows: 1, x: 1, y: 1)
+            : Brick(columns: 1, rows: 1, x: 2, y: 1)
         case "9": !orientation.isLandscape
-            ? Brick(origin: BrickOrigin(x: 2, y: 1), size: BrickSize(columns: 1, rows: 1))
-            : Brick(origin: BrickOrigin(x: 2, y: 2), size: BrickSize(columns: 1, rows: 1))
+            ? Brick(columns: 1, rows: 1, x: 2, y: 1)
+            : Brick(columns: 1, rows: 1, x: 2, y: 2)
             
         case ".": !orientation.isLandscape
-            ? Brick(origin: BrickOrigin(x: 2, y: 4), size: BrickSize(columns: 1, rows: 1))
-            : Brick(origin: BrickOrigin(x: 2, y: 3), size: BrickSize(columns: 1, rows: 1))
+            ? Brick(columns: 1, rows: 1, x: 2, y: 4)
+            : Brick(columns: 1, rows: 1, x: 2, y: 3)
             
         case "/": !orientation.isLandscape
-            ? Brick(origin: BrickOrigin(x: 2, y: 0), size: BrickSize(columns: 1, rows: 1))
-            : Brick(origin: BrickOrigin(x: 3, y: 1), size: BrickSize(columns: 1, rows: 1))
+            ? Brick(columns: 1, rows: 1, x: 2, y: 0)
+            : Brick(columns: 1, rows: 1, x: 3, y: 1)
         case "*": !orientation.isLandscape
-            ? Brick(origin: BrickOrigin(x: 3, y: 0), size: BrickSize(columns: 1, rows: 1))
-            : Brick(origin: BrickOrigin(x: 3, y: 0), size: BrickSize(columns: 1, rows: 1))
+            ? Brick(columns: 1, rows: 1, x: 3, y: 0)
+            : Brick(columns: 1, rows: 1, x: 3, y: 0)
         case "-": !orientation.isLandscape
-            ? Brick(origin: BrickOrigin(x: 3, y: 1), size: BrickSize(columns: 1, rows: 1))
-            : Brick(origin: BrickOrigin(x: 3, y: 2), size: BrickSize(columns: 1, rows: 1))
+            ? Brick(columns: 1, rows: 1, x: 3, y: 1)
+            : Brick(columns: 1, rows: 1, x: 3, y: 2)
         case "+": !orientation.isLandscape
-            ? Brick(origin: BrickOrigin(x: 3, y: 2), size: BrickSize(columns: 1, rows: 1))
-            : Brick(origin: BrickOrigin(x: 3, y: 3), size: BrickSize(columns: 1, rows: 1))
+            ? Brick(columns: 1, rows: 1, x: 3, y: 2)
+            : Brick(columns: 1, rows: 1, x: 3, y: 3)
         case "=": !orientation.isLandscape
-            ? Brick(origin: BrickOrigin(x: 3, y: 3), size: BrickSize(columns: 1, rows: 2))
-            : Brick(origin: BrickOrigin(x: 4, y: 2), size: BrickSize(columns: 1, rows: 2))
+            ? Brick(columns: 1, rows: 2, x: 3, y: 3)
+            : Brick(columns: 1, rows: 2, x: 4, y: 2)
         case "MC": !orientation.isLandscape
-            ? Brick(origin: BrickOrigin(x: 0, y: 0), size: BrickSize(columns: 1, rows: 1))
-            : Brick(origin: BrickOrigin(x: 4, y: 0), size: BrickSize(columns: 1, rows: 1))
+            ? Brick(columns: 1, rows: 1, x: 0, y: 0)
+            : Brick(columns: 1, rows: 1, x: 4, y: 0)
         case "M+": !orientation.isLandscape
-            ? Brick(origin: BrickOrigin(x: 1, y: 0), size: BrickSize(columns: 1, rows: 1))
-            : Brick(origin: BrickOrigin(x: 4, y: 1), size: BrickSize(columns: 1, rows: 1))
+            ? Brick(columns: 1, rows: 1, x: 1, y: 0)
+            : Brick(columns: 1, rows: 1, x: 4, y: 1)
             
         default:
             Brick(size: BrickSize(columns: 1, rows: 1))
@@ -78,7 +78,7 @@ struct CalculatorView: View {
     @State private var orientation = UIDeviceOrientation.unknown
     
     var body: some View {
-        return BrickBrack(gap:5, columns: orientation.isLandscape ? 5 : 4) {
+        return BrickWall(gap:5, columns: orientation.isLandscape ? 5 : 4) {
             Text("0")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(.blue)

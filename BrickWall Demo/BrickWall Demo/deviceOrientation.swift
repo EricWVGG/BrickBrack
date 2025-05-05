@@ -1,6 +1,6 @@
 //
 //  deviceOrientation.swift
-//  BrickBrack Demo
+//  BrickWall Demo
 //
 //  Created by Eric Jacobsen on 4/15/25.
 //

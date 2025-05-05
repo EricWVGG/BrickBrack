@@ -1,0 +1,590 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AFFCB79E2DC9175B007F4E0C /* BrickWall in Frameworks */ = {isa = PBXBuildFile; productRef = AFFCB79D2DC9175B007F4E0C /* BrickWall */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AFFCB7742DC916EA007F4E0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AFFCB75E2DC916E9007F4E0C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AFFCB7652DC916E9007F4E0C;
+			remoteInfo = "BrickWall Demo";
+		};
+		AFFCB77E2DC916EA007F4E0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AFFCB75E2DC916E9007F4E0C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AFFCB7652DC916E9007F4E0C;
+			remoteInfo = "BrickWall Demo";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AFFCB7662DC916E9007F4E0C /* BrickWall Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BrickWall Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFFCB7732DC916EA007F4E0C /* BrickWall DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BrickWall DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFFCB77D2DC916EA007F4E0C /* BrickWall DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BrickWall DemoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		AFFCB7682DC916E9007F4E0C /* BrickWall Demo */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "BrickWall Demo";
+			sourceTree = "<group>";
+		};
+		AFFCB7762DC916EA007F4E0C /* BrickWall DemoTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "BrickWall DemoTests";
+			sourceTree = "<group>";
+		};
+		AFFCB7802DC916EA007F4E0C /* BrickWall DemoUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "BrickWall DemoUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AFFCB7632DC916E9007F4E0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFFCB79E2DC9175B007F4E0C /* BrickWall in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFFCB7702DC916EA007F4E0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFFCB77A2DC916EA007F4E0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AFFCB75D2DC916E9007F4E0C = {
+			isa = PBXGroup;
+			children = (
+				AFFCB7682DC916E9007F4E0C /* BrickWall Demo */,
+				AFFCB7762DC916EA007F4E0C /* BrickWall DemoTests */,
+				AFFCB7802DC916EA007F4E0C /* BrickWall DemoUITests */,
+				AFFCB7672DC916E9007F4E0C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AFFCB7672DC916E9007F4E0C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AFFCB7662DC916E9007F4E0C /* BrickWall Demo.app */,
+				AFFCB7732DC916EA007F4E0C /* BrickWall DemoTests.xctest */,
+				AFFCB77D2DC916EA007F4E0C /* BrickWall DemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AFFCB7652DC916E9007F4E0C /* BrickWall Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFFCB7872DC916EA007F4E0C /* Build configuration list for PBXNativeTarget "BrickWall Demo" */;
+			buildPhases = (
+				AFFCB7622DC916E9007F4E0C /* Sources */,
+				AFFCB7632DC916E9007F4E0C /* Frameworks */,
+				AFFCB7642DC916E9007F4E0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				AFFCB7682DC916E9007F4E0C /* BrickWall Demo */,
+			);
+			name = "BrickWall Demo";
+			packageProductDependencies = (
+				AFFCB79D2DC9175B007F4E0C /* BrickWall */,
+			);
+			productName = "BrickWall Demo";
+			productReference = AFFCB7662DC916E9007F4E0C /* BrickWall Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AFFCB7722DC916EA007F4E0C /* BrickWall DemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFFCB78A2DC916EA007F4E0C /* Build configuration list for PBXNativeTarget "BrickWall DemoTests" */;
+			buildPhases = (
+				AFFCB76F2DC916EA007F4E0C /* Sources */,
+				AFFCB7702DC916EA007F4E0C /* Frameworks */,
+				AFFCB7712DC916EA007F4E0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AFFCB7752DC916EA007F4E0C /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				AFFCB7762DC916EA007F4E0C /* BrickWall DemoTests */,
+			);
+			name = "BrickWall DemoTests";
+			packageProductDependencies = (
+			);
+			productName = "BrickWall DemoTests";
+			productReference = AFFCB7732DC916EA007F4E0C /* BrickWall DemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AFFCB77C2DC916EA007F4E0C /* BrickWall DemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFFCB78D2DC916EA007F4E0C /* Build configuration list for PBXNativeTarget "BrickWall DemoUITests" */;
+			buildPhases = (
+				AFFCB7792DC916EA007F4E0C /* Sources */,
+				AFFCB77A2DC916EA007F4E0C /* Frameworks */,
+				AFFCB77B2DC916EA007F4E0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AFFCB77F2DC916EA007F4E0C /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				AFFCB7802DC916EA007F4E0C /* BrickWall DemoUITests */,
+			);
+			name = "BrickWall DemoUITests";
+			packageProductDependencies = (
+			);
+			productName = "BrickWall DemoUITests";
+			productReference = AFFCB77D2DC916EA007F4E0C /* BrickWall DemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AFFCB75E2DC916E9007F4E0C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1630;
+				LastUpgradeCheck = 1630;
+				TargetAttributes = {
+					AFFCB7652DC916E9007F4E0C = {
+						CreatedOnToolsVersion = 16.3;
+						LastSwiftMigration = 1630;
+					};
+					AFFCB7722DC916EA007F4E0C = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = AFFCB7652DC916E9007F4E0C;
+					};
+					AFFCB77C2DC916EA007F4E0C = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = AFFCB7652DC916E9007F4E0C;
+					};
+				};
+			};
+			buildConfigurationList = AFFCB7612DC916E9007F4E0C /* Build configuration list for PBXProject "BrickWall Demo" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AFFCB75D2DC916E9007F4E0C;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				AFFCB79C2DC9175B007F4E0C /* XCLocalSwiftPackageReference "../../BrickWall" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = AFFCB7672DC916E9007F4E0C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AFFCB7652DC916E9007F4E0C /* BrickWall Demo */,
+				AFFCB7722DC916EA007F4E0C /* BrickWall DemoTests */,
+				AFFCB77C2DC916EA007F4E0C /* BrickWall DemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AFFCB7642DC916E9007F4E0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFFCB7712DC916EA007F4E0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFFCB77B2DC916EA007F4E0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AFFCB7622DC916E9007F4E0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFFCB76F2DC916EA007F4E0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFFCB7792DC916EA007F4E0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AFFCB7752DC916EA007F4E0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AFFCB7652DC916E9007F4E0C /* BrickWall Demo */;
+			targetProxy = AFFCB7742DC916EA007F4E0C /* PBXContainerItemProxy */;
+		};
+		AFFCB77F2DC916EA007F4E0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AFFCB7652DC916E9007F4E0C /* BrickWall Demo */;
+			targetProxy = AFFCB77E2DC916EA007F4E0C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AFFCB7852DC916EA007F4E0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = VFNEPQ7P7N;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AFFCB7862DC916EA007F4E0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = VFNEPQ7P7N;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AFFCB7882DC916EA007F4E0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VFNEPQ7P7N;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "wvgg.BrickWall-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AFFCB7892DC916EA007F4E0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VFNEPQ7P7N;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "wvgg.BrickWall-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AFFCB78B2DC916EA007F4E0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VFNEPQ7P7N;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "wvgg.BrickWall-DemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BrickWall Demo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BrickWall Demo";
+			};
+			name = Debug;
+		};
+		AFFCB78C2DC916EA007F4E0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VFNEPQ7P7N;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "wvgg.BrickWall-DemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BrickWall Demo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BrickWall Demo";
+			};
+			name = Release;
+		};
+		AFFCB78E2DC916EA007F4E0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VFNEPQ7P7N;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "wvgg.BrickWall-DemoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "BrickWall Demo";
+			};
+			name = Debug;
+		};
+		AFFCB78F2DC916EA007F4E0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VFNEPQ7P7N;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "wvgg.BrickWall-DemoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "BrickWall Demo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AFFCB7612DC916E9007F4E0C /* Build configuration list for PBXProject "BrickWall Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFFCB7852DC916EA007F4E0C /* Debug */,
+				AFFCB7862DC916EA007F4E0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFFCB7872DC916EA007F4E0C /* Build configuration list for PBXNativeTarget "BrickWall Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFFCB7882DC916EA007F4E0C /* Debug */,
+				AFFCB7892DC916EA007F4E0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFFCB78A2DC916EA007F4E0C /* Build configuration list for PBXNativeTarget "BrickWall DemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFFCB78B2DC916EA007F4E0C /* Debug */,
+				AFFCB78C2DC916EA007F4E0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFFCB78D2DC916EA007F4E0C /* Build configuration list for PBXNativeTarget "BrickWall DemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFFCB78E2DC916EA007F4E0C /* Debug */,
+				AFFCB78F2DC916EA007F4E0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		AFFCB79C2DC9175B007F4E0C /* XCLocalSwiftPackageReference "../../BrickWall" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../BrickWall;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AFFCB79D2DC9175B007F4E0C /* BrickWall */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrickWall;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = AFFCB75E2DC916E9007F4E0C /* Project object */;
+}

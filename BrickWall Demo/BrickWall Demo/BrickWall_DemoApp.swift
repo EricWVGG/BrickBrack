@@ -1,6 +1,6 @@
 //
-//  BrickBrack_DemoApp.swift
-//  BrickBrack Demo
+//  BrickWall_DemoApp.swift
+//  BrickWall Demo
 //
 //  Created by Eric Jacobsen on 4/14/25.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct BrickBrack_DemoApp: App {
+struct BrickWall_DemoApp: App {
     enum Screen {
         case blocks, calculator
     }

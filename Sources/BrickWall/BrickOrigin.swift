@@ -1,6 +1,6 @@
 //
 //  BrickOrigin.swift
-//  BrickBrack
+//  BrickWall
 //
 //  Created by Eric Jacobsen on 4/14/25.
 //

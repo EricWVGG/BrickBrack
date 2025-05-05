@@ -1,6 +1,6 @@
 //
-//  BrickBrack.swift
-//  BrickBrack
+//  BrickWall.swift
+//  BrickWall
 //
 //  Created by Eric Jacobsen on 4/1/25.
 //
@@ -9,13 +9,13 @@
 
 import SwiftUI
 
-let ERROR_DOMAIN = "BrickBrackLayout"
+let ERROR_DOMAIN = "BrickWallLayout"
 
 struct BrickKey: @preconcurrency LayoutValueKey {
     @MainActor static var defaultValue: Brick = Brick(origin: BrickOrigin(x: 0, y: 0), size: BrickSize(columns: 1, rows: 1))
 }
 
-public struct BrickBrack: Layout {
+public struct BrickWall: Layout {
     private let gapX: CGFloat
     private let gapY: CGFloat
     private let columns: Int
@@ -85,20 +85,20 @@ extension View {
     }
 }
 
-extension BrickBrack {
+extension BrickWall {
     private func cellSize(forViewSize viewSize: CGFloat) -> CGFloat {
         let cols = CGFloat(self.columns)
         return ( viewSize - self.gapX * (cols + 1) ) / cols
     }
 }
 
-extension BrickBrack {
+extension BrickWall {
     private func mapSubviewsToDestinations(
         _ subviews: Subviews,
         cellSize: CGFloat,
         offset: CGPoint = CGPoint(x: 0, y: 0)
     ) -> [CGRect] {
-        let map = BrickBrackMap(columnCount: self.columns, subviews: subviews)
+        let map = BrickWallMap(columnCount: self.columns, subviews: subviews)
 
         return subviews.map { subview in
             let brick = subview[BrickKey.self]
