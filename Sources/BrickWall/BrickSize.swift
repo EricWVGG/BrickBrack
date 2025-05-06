@@ -6,8 +6,8 @@
 //
 
 public struct BrickSize {
-    let columns: Int
-    let rows: Int
+    public let columns: Int
+    public let rows: Int
     
     public init(columns: Int, rows: Int) {
         self.columns = columns
